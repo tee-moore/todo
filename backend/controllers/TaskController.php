@@ -9,15 +9,7 @@ use yii\rest\ActiveController;
  *
  * @property string modelClass
  */
-class UserController extends ActiveController
+class TaskController extends ActiveController
 {
-    public $modelClass = 'backend\models\Task';
-
-    /**
-     * {@inheritdoc}
-     */
-    public function actionIndex()
-    {
-        return $this->render('index');
-    }
+    public $modelClass = 'backend\models\task';
 }

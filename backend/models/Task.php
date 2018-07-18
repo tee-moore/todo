@@ -22,7 +22,7 @@ class Task extends ActiveRecord
      */
     public static function tableName()
     {
-        return 'Task';
+        return 'task';
     }
 
     /**
