@@ -12,18 +12,18 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
-        //'request' => [
-        //    'csrfParam' => '_csrf-frontend',
-        //],
+        'request' => [
+            'csrfParam' => '_csrf-frontend',
+        ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],
-//        'session' => [
-//            // this is the name of the session cookie used for login on the frontend
-//            'name' => 'advanced-frontend',
-//        ],
+        'session' => [
+            // this is the name of the session cookie used for login on the frontend
+            'name' => 'advanced-frontend',
+        ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -33,22 +33,9 @@ return [
                 ],
             ],
         ],
-//        'errorHandler' => [
-//            'errorAction' => 'site/error',
-//        ],
-//        'request' => [
-//            'parsers' => [
-//                'application/json' => 'yii\web\JsonParser',
-//            ]
-//        ],
-//        'urlManager' => [
-//            'enablePrettyUrl' => true,
-//            'showScriptName' => false,
-//            'enableStrictParsing' => true,
-//            'rules' => [
-//                ['class' => 'yii\rest\UrlRule', 'controller' => 'task'],
-//            ],
-//        ],
+        'errorHandler' => [
+            'errorAction' => 'site/error',
+        ],
     ],
     'params' => $params,
 ];
