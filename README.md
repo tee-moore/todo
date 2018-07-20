@@ -1,7 +1,7 @@
 1.git clone https://github.com/tee-moore/todo.git
 2.composer update
 3.php init ->  Development
-4.create database todo
+4.common\config\main-local.php - set database name
 5.php yii migrate
 
 
