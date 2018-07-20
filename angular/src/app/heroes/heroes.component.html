@@ -1,19 +1,30 @@
-<div>
-  <label>New Task:
-    <input #taskTitle />
-  </label>
+<div class="newheroes">
+  <h6>Add New Task:</h6>
+
+  <div class="input-field">
+    <input #taskTitle id="taskTitle" name="taskTitle" type="text" class="validate"/>
+    <label for="taskTitle">Title</label>
+  </div>
+
+  <!--<div class="input-field">-->
+    <!--<input #taskDesc id="taskDesc"  name="taskDesc" type="text" class="validate"/>-->
+    <!--<label for="taskDesc">Description</label>-->
+  <!--</div>-->
+
   <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(taskTitle.value); taskTitle.value=''">
-    add
-  </button>
+  <a class="waves-effect waves-light btn" (click)="add(taskTitle.value); taskTitle.value=''">
+    Add task
+  </a>
 </div>
 
-<h2>My tasks:</h2>
+
+<h6>My tasks:</h6>
 <ul class="heroes">
   <li *ngFor="let hero of heroes"
       [class.selected]="hero === selectedHero"
       (click)="onSelect(hero)">
     <span class="badge">{{hero.id}}</span> {{hero.title}}
+
     <button class="delete" title="delete task"
             (click)="delete(hero)">x</button>
   </li>
