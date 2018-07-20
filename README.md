@@ -1,6 +1,6 @@
-Install:<br>
-<br>
-YII2<br>
+<h2>Install:<h2>
+
+<h6>YII2</h6>
 <ul>
 <li>1.git clone https://github.com/tee-moore/todo.git</li>
 <li>2.composer update</li>
@@ -8,8 +8,8 @@ YII2<br>
 <li>4.common\config\main-local.php - set database name</li>
 <li>5.php yii migrate</li>
 </ul>
-<br>
-Angular<br>
+
+<h6>Angular</h6>
 <ul>
 <li>1.npm install</li>
 <li>2.ng serve --open</li>
