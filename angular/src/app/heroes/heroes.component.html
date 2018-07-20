@@ -12,6 +12,16 @@
     </div>
 
     <div class="input-field">
+        <select>
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+        </select>
+        <label>Materialize Select</label>
+    </div>
+
+    <div class="input-field">
         <!-- (click) passes input value to add() and then clears the input -->
         <a class="waves-effect waves-light btn" (click)="add(taskTitle.value, taskDesc.value); taskTitle.value=''">
             Add task
@@ -26,16 +36,17 @@
     [class.selected]="hero === selectedHero"
     (click)="onSelect(hero)" class="collection-item avatar">
 
-    <i class="material-icons circle">folder</i>
+    <i class="material-icons circle">image</i>
 
     <h4>{{hero.title}}</h4>
-
     <p class="description">{{hero.description}}</p>
 
     <a class="button-delete waves-effect waves-light btn-small red"
     (click)="delete(hero)"
     ><i class="material-icons">delete</i></a>
-
+        <img *ngIf="hero.status === 'done'" src="../../assets/img/done.png" alt="" height="25">
+        <img *ngIf="hero.status === 'in progress'" src="../../assets/img/progres.png" alt="" height="25">
+        <img *ngIf="hero.status === 'new'" src="../../assets/img/todo.png" alt="" height="25">
     </li>
 </ul>
 
