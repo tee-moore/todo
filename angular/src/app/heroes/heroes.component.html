@@ -1,10 +1,22 @@
 <h2>My tasks:</h2>
 
+<div>
+  <label>New Task:
+    <input #taskTitle />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(taskTitle.value); taskTitle.value=''">
+    add
+  </button>
+</div>
+
 <ul class="heroes">
   <li *ngFor="let hero of heroes"
       [class.selected]="hero === selectedHero"
       (click)="onSelect(hero)">
     <span class="badge">{{hero.id}}</span> {{hero.title}}
+    <button class="delete" title="delete task"
+            (click)="delete(hero)">x</button>
   </li>
 </ul>
 

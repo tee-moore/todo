@@ -1,4 +1,9 @@
 export class Hero {
     id: number;
-    name: string;
+    title: string;
+    description: string;
+    created_at: number;
+    started_at: number;
+    status: string;
+    img: string;
 }
