@@ -18,16 +18,18 @@
 </div>
 
 
-<h6>My tasks:</h6>
-<ul class="heroes">
-  <li *ngFor="let hero of heroes"
-      [class.selected]="hero === selectedHero"
-      (click)="onSelect(hero)">
-    <span class="badge">{{hero.id}}</span> {{hero.title}}
+<div class="heroes">
+  <h6>List my tasks:</h6>
+  <ul>
+    <li *ngFor="let hero of heroes"
+        [class.selected]="hero === selectedHero"
+        (click)="onSelect(hero)">
+      <span class="badge">{{hero.id}}</span> {{hero.title}}
 
-    <button class="delete" title="delete task"
-            (click)="delete(hero)">x</button>
-  </li>
-</ul>
+      <button class="delete" title="delete task"
+              (click)="delete(hero)">x</button>
+    </li>
+  </ul>
+</div>
 
 <app-hero-detail [hero]="selectedHero"></app-hero-detail>
