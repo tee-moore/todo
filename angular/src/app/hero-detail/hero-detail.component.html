@@ -1,11 +1,23 @@
-<div *ngIf="hero">
+<div *ngIf="hero" class="edit">
 
-  <h2>Edit task: {{hero.title | uppercase}}</h2>
-  <div><span>id: </span>{{hero.id}}</div>
+  <h6>Edit task:</h6>
   <div>
-    <label>name:
-      <input [(ngModel)]="hero.title" placeholder="name"/><button (click)="save()">save</button>
-    </label>
+
+
+    <div class="input-field">
+      <input [(ngModel)]="hero.title" placeholder="Title" id="taskTitle" name="taskTitle" type="text"/>
+      <label for="taskTitle">Title</label>
+    </div>
+
+    <div class="input-field">
+      <input [(ngModel)]="hero.description" placeholder="Description" id="taskTitle" name="taskTitle" type="text"/>
+      <label for="taskTitle">Description</label>
+    </div>
+
+    <a class="waves-effect waves-light btn" (click)="save()">
+      save
+    </a>
+
   </div>
 
 </div>

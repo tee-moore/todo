@@ -16,10 +16,11 @@ export class HeroesComponent implements OnInit {
 
     constructor(private heroService: HeroService) { }
 
-    add(title: string): void {
+    add(title: string, description: string): void {
         title = title.trim();
+        description = description.trim();
         if (!title) { return; }
-        this.heroService.addHero({ title } as Hero)
+        this.heroService.addHero({ title, description } as Hero)
             .subscribe(hero => {
                 this.heroes.push(hero);
             });

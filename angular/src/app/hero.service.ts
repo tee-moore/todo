@@ -23,7 +23,7 @@ export class HeroService {
 
     /** Log a HeroService message with the MessageService */
     private log(message: string) {
-        this.messageService.add(`Tasks Service: ${message}`);
+        this.messageService.add(`TODO application: ${message}`);
     }
 
     getHeroes (): Observable<Hero[]> {
@@ -44,9 +44,9 @@ export class HeroService {
     }
 
     /** POST: add a new hero to the server */
-    addHero (hero: Hero): Observable<Hero> {
+    addHero (hero: Hero, description: Hero): Observable<Hero> {
         return this.http.post<Hero>(this.heroesUrl, hero, httpOptions).pipe(
-            tap((hero: Hero) => this.log(`added task w/ id=${hero.id}`)),
+            tap((hero: Hero) => this.log(`added task id=${hero.id}`)),
             catchError(this.handleError<Hero>('addHero'))
         );
     }
