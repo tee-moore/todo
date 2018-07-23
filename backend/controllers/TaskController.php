@@ -13,7 +13,6 @@ class TaskController extends ActiveController
 {
     public $modelClass = 'backend\models\task';
 
-
     /**
      * @inheritdoc
      */
@@ -36,5 +35,13 @@ class TaskController extends ActiveController
 
         ]);
     }
+
+    public function actionUpload()
+    {
+        $path = 'D:/OSPanel/domains/todo.loc/backend/web/uploads/people.txt';
+        file_put_contents('./test11111111111.txt', "test");
+        return "ok";
+    }
+
 
 }

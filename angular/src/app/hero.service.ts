@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map, catchError, tap } from 'rxjs/operators';
-import {isUndefined} from "util";
+
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -13,6 +13,7 @@ const httpOptions = {
 @Injectable({
     providedIn: 'root',
 })
+
 export class HeroService {
 
     // URL to web api
@@ -51,6 +52,17 @@ export class HeroService {
             tap((hero: Hero) => this.log(`added task id=${hero.id}`)),
             catchError(this.handleError<Hero>('addHero'))
         );
+    }
+
+    postFile(img: File): Observable<boolean> {
+        const formData: FormData = new FormData();
+        formData.append('fileKey', img, img.name);
+        return this.http
+            .post(this.heroesUrl, formData, httpOptions).pipe(
+                map(() => { return true; })
+            );
+
+            // .catchError((e) => this.handleError(e));
     }
 
     /** DELETE: delete the hero from the server */

@@ -14,10 +14,22 @@ export class HeroesComponent implements OnInit {
 
     heroes: Hero[];
 
+    img: File = null;
 
     constructor(private heroService: HeroService) { }
 
 
+    handleFileInput(files: FileList) {
+        this.img = files.item(0);
+    }
+
+    uploadFileToActivity() {
+        this.heroService.postFile(this.img).subscribe(data => {
+            // do something, if upload success
+        }, error => {
+            console.log(error);
+        });
+    }
 
     add(title: string, description: string, status: string, created_at: number): void {
         title = title.trim();
