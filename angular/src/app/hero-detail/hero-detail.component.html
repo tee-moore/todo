@@ -1,34 +1,29 @@
 <div *ngIf="hero" class="edit">
 
-  <h5>Edit task:</h5>
-  <div>
-
+    <h5>Edit task:</h5>
 
     <div class="input-field">
-      <input [(ngModel)]="hero.title" placeholder="Title" id="taskTitle" name="taskTitle" type="text"/>
-      <label for="taskTitle">Title</label>
+        <input [(ngModel)]="hero.title" placeholder="Title" id="taskTitle" name="taskTitle" type="text"/>
+        <label for="taskTitle" class="active">Title</label>
     </div>
 
     <div class="input-field">
-      <input [(ngModel)]="hero.description" placeholder="Description" id="taskTitle" name="taskTitle" type="text"/>
-      <label for="taskTitle">Description</label>
+        <input [(ngModel)]="hero.description" placeholder="Description" id="taskDesc" name="taskDesc" type="text"/>
+        <label for="taskTitle" class="active">Description</label>
     </div>
-
 
     <div class="input-field">
-      <select>
-        <option value="new" selected>To do</option>
-        <option value="in progress">In progress</option>
-        <option value="done">Done</option>
-      </select>
-      <label>Status</label>
+        <select [(ngModel)]="hero.status" class="browser-default">
+            <option value="in progress">In progress</option>
+            <option value="done">Done</option>
+        </select>
+        <label class="active">Status</label>
     </div>
 
-
-    <a class="waves-effect waves-light btn" (click)="save()">
-      save
-    </a>
-
-  </div>
+    <div class="input-field">
+        <a class="waves-effect waves-light btn" (click)="save()">
+            save
+        </a>
+    </div>
 
 </div>

@@ -10,12 +10,16 @@ import { HeroService } from '../hero.service';
 export class HeroDetailComponent implements OnInit {
     @Input() hero: Hero;
 
+    started_at: number = 0;
     constructor(private heroService: HeroService) { }
 
     ngOnInit() {
     }
 
     save(): void {
+
+        this.hero.started_at = Math.floor(Date.now()/1000);
+
         this.heroService.updateHero(this.hero)
             .subscribe(() => this.hero);
     }

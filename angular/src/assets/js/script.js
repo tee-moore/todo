@@ -1,3 +1,3 @@
-$(document).ready(function(){
-    $('select').formSelect();
-})
+$(document).ready(function() {
+    $('.edit').css("background-color", "yellow");
+});

@@ -5,8 +5,8 @@
 .collection {
     margin-bottom: 60px;
 
-    li {
-        cursor: pointer;
+    .collection-item.avatar {
+        padding-left: 15px;
     }
 
     h4 {
@@ -34,6 +34,12 @@
         position: absolute;
         right: 15px;
         top: 15px;
+    }
+
+    .button-edit {
+        position: absolute;
+        right: 15px;
+        top: 60px;
     }
 
 }
