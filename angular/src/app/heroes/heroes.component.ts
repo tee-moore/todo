@@ -14,7 +14,10 @@ export class HeroesComponent implements OnInit {
 
     heroes: Hero[];
 
+
     constructor(private heroService: HeroService) { }
+
+
 
     add(title: string, description: string, status: string, created_at: number): void {
         title = title.trim();
@@ -26,6 +29,7 @@ export class HeroesComponent implements OnInit {
             .subscribe(hero => {
                 this.heroes.push(hero);
             });
+        this.uploadFileToActivity();
     }
 
     delete(hero: Hero): void {

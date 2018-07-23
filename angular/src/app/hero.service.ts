@@ -3,7 +3,7 @@ import { Hero } from './hero';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
+import { map, catchError, tap } from 'rxjs/operators';
 import {isUndefined} from "util";
 
 const httpOptions = {
@@ -44,9 +44,10 @@ export class HeroService {
         );
     }
 
-    /** POST: add a new hero to the server */
+        /** POST: add a new hero to the server */
     addHero (hero: Hero): Observable<Hero> {
-        return this.http.post<Hero>(this.heroesUrl, hero, httpOptions).pipe(
+        return this.http
+            .post<Hero>(this.heroesUrl, hero, httpOptions).pipe(
             tap((hero: Hero) => this.log(`added task id=${hero.id}`)),
             catchError(this.handleError<Hero>('addHero'))
         );
@@ -70,6 +71,7 @@ export class HeroService {
             catchError(this.handleError<any>('updateHero'))
         );
     }
+
 
     /**
      * Handle Http operation that failed.

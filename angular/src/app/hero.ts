@@ -5,5 +5,5 @@ export class Hero {
     created_at: number;
     started_at: number;
     status: string;
-    img: string;
+    img: File;
 }

@@ -32,7 +32,8 @@ class Task extends ActiveRecord
     {
         return [
             [['created_at', 'started_at'], 'integer'],
-            [['title', 'description', 'status', 'img'], 'string', 'max' => 255],
+            [['img'], 'safe'],
+            [['title', 'description', 'status'], 'string', 'max' => 255],
         ];
     }
 
