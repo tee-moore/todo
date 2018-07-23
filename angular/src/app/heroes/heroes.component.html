@@ -12,18 +12,12 @@
     </div>
 
     <div class="input-field">
-        <select>
-            <option value="" disabled selected>Choose your option</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-        </select>
-        <label>Materialize Select</label>
+        <input #taskStatus id="taskStatus"  name="taskStatus" type="hidden" value="new"/>
     </div>
 
     <div class="input-field">
         <!-- (click) passes input value to add() and then clears the input -->
-        <a class="waves-effect waves-light btn" (click)="add(taskTitle.value, taskDesc.value); taskTitle.value=''">
+        <a class="waves-effect waves-light btn" (click)="add(taskTitle.value, taskDesc.value, taskStatus.value); taskTitle.value=''; taskDesc.value=''">
             Add task
         </a>
     </div>
@@ -47,6 +41,11 @@
         <img *ngIf="hero.status === 'done'" src="../../assets/img/done.png" alt="" height="25">
         <img *ngIf="hero.status === 'in progress'" src="../../assets/img/progres.png" alt="" height="25">
         <img *ngIf="hero.status === 'new'" src="../../assets/img/todo.png" alt="" height="25">
+
+        <p class="description">created at :{{hero.created_at * 1000 | date:'dd.MM.yyyy'}}</p>
+        <p *ngIf="hero.status !== 'new'" class="description">started at :{{hero.started_at * 1000 | date:'dd.MM.yyyy'}}</p>
+        <p class="description">img :{{hero.img}}</p>
+
     </li>
 </ul>
 

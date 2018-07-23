@@ -31,7 +31,6 @@ class Task extends ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'description', 'created_at', 'status', 'img'], 'safe'],
             [['created_at', 'started_at'], 'integer'],
             [['title', 'description', 'status', 'img'], 'string', 'max' => 255],
         ];

@@ -16,11 +16,13 @@ export class HeroesComponent implements OnInit {
 
     constructor(private heroService: HeroService) { }
 
-    add(title: string, description: string): void {
+    add(title: string, description: string, status: string, created_at: number): void {
         title = title.trim();
         description = description.trim();
-        if (!title) { return; }
-        this.heroService.addHero({ title, description } as Hero)
+        created_at = Math.floor(Date.now()/1000);
+
+        if (!title || !description) { return; }
+        this.heroService.addHero({ title, description, status, created_at } as Hero)
             .subscribe(hero => {
                 this.heroes.push(hero);
             });

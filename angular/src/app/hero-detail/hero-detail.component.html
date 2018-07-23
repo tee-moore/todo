@@ -14,6 +14,17 @@
       <label for="taskTitle">Description</label>
     </div>
 
+
+    <div class="input-field">
+      <select>
+        <option value="new" selected>To do</option>
+        <option value="in progress">In progress</option>
+        <option value="done">Done</option>
+      </select>
+      <label>Status</label>
+    </div>
+
+
     <a class="waves-effect waves-light btn" (click)="save()">
       save
     </a>
