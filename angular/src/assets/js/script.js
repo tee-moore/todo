@@ -7,5 +7,3 @@ $(window).load(function() {
     });
 
 });
-
-
