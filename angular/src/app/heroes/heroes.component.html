@@ -49,7 +49,7 @@
     <div class="meta">
         <p class="block createdat">Created at: {{hero.created_at * 1000 | date:'dd.MM.yyyy'}}</p>
         <p *ngIf="hero.started_at !== null" class="block startedat">Started at: {{hero.started_at * 1000 | date:'dd.MM.yyyy'}}</p>
-        <p class="block img">Image: {{hero.img}} link</p>
+        <p class="block img"><a target="_blank" href="http://todo.loc/backend/web/{{hero.imagefile}}"><img src="http://todo.loc/backend/web/{{hero.imagefile}}" alt="" width="50"></a></p>
     </div>
 
     <a class="button-delete waves-effect waves-light btn-small red"

@@ -59,6 +59,14 @@
         color: dimgray;
     }
 
+    .img {
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+        width: 50px;
+        margin-right: 0;
+    }
+
     .button-delete {
         position: absolute;
         right: 15px;
@@ -69,6 +77,10 @@
         position: absolute;
         right: 15px;
         top: 60px;
+    }
+
+    .btn-small {
+        padding: 0 10px;
     }
 
 }

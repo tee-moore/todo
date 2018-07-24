@@ -31,11 +31,11 @@ return [
                 ],
             ],
         ],
-        'request' => [
-            'parsers' => [
-                'application/json' => 'yii\web\JsonParser',
-            ]
-        ],
+//        'request' => [
+//            'parsers' => [
+//                'application/json' => 'yii\web\JsonParser',
+//            ]
+//        ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
