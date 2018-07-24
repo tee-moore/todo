@@ -45,24 +45,13 @@ export class HeroService {
         );
     }
 
-        /** POST: add a new hero to the server */
+    /** POST: add a new hero to the server */
     addHero (hero: Hero): Observable<Hero> {
         return this.http
             .post<Hero>(this.heroesUrl, hero, httpOptions).pipe(
             tap((hero: Hero) => this.log(`added task id=${hero.id}`)),
             catchError(this.handleError<Hero>('addHero'))
         );
-    }
-
-    postFile(img: File): Observable<boolean> {
-        const formData: FormData = new FormData();
-        formData.append('fileKey', img, img.name);
-        return this.http
-            .post(this.heroesUrl, formData, httpOptions).pipe(
-                map(() => { return true; })
-            );
-
-            // .catchError((e) => this.handleError(e));
     }
 
     /** DELETE: delete the hero from the server */
@@ -83,7 +72,6 @@ export class HeroService {
             catchError(this.handleError<any>('updateHero'))
         );
     }
-
 
     /**
      * Handle Http operation that failed.
