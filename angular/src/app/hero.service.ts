@@ -54,6 +54,16 @@ export class HeroService {
         );
     }
 
+    postFile(imagefile: File): Observable<boolean> {
+        const formData: FormData = new FormData();
+        formData.append('imagefile', imagefile, imagefile.name);
+        return this.http
+            .post(this.heroesUrl, formData, httpOptions)
+            .pipe(
+                map(() => { return true; }),
+            );
+    }
+
     /** DELETE: delete the hero from the server */
     deleteHero (hero: Hero | number): Observable<Hero> {
         const id = typeof hero === 'number' ? hero : hero.id;
