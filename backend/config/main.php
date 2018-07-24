@@ -31,17 +31,17 @@ return [
                 ],
             ],
         ],
-//        'request' => [
-//            'parsers' => [
-//                'application/json' => 'yii\web\JsonParser',
-//            ]
-//        ],
+        'request' => [
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ]
+        ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'enableStrictParsing' => true,
             'rules' => [
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'task'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'task', 'extraPatterns' => ['POST upload' => 'upload']],
             ],
         ],
         'errorHandler' => [

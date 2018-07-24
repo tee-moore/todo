@@ -3,6 +3,8 @@
 namespace backend\models;
 
 use \yii\db\ActiveRecord;
+use \yii\web\UploadedFile;
+
 
 /**
  * This is the model class for table "Task".
@@ -13,10 +15,13 @@ use \yii\db\ActiveRecord;
  * @property int $created_at
  * @property int $started_at
  * @property string $status
- * @property string $img
+ * @property string $imageFile
  */
 class Task extends ActiveRecord
 {
+
+	public $imageFile;
+
     /**
      * {@inheritdoc}
      */
@@ -31,25 +36,11 @@ class Task extends ActiveRecord
     public function rules()
     {
         return [
+	        [['title', 'status'], 'string', 'max' => 255],
+	        [['description'], 'string'],
             [['created_at', 'started_at'], 'integer'],
-            [['img'], 'safe'],
-            [['title', 'description', 'status'], 'string', 'max' => 255],
-        ];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function attributeLabels()
-    {
-        return [
-            'id' => 'ID',
-            'title' => 'Title',
-            'description' => 'Description',
-            'created_at' => 'Created At',
-            'started_at' => 'Started At',
-            'status' => 'Status',
-            'img' => 'Image',
+//	        [['imageFile'], 'image', 'skipOnEmpty' => false, 'extensions' => 'png, jpg, jpeg'],
+	        [['imageFile'], 'string'],
         ];
     }
 }
