@@ -7,7 +7,7 @@ import { map, catchError, tap } from 'rxjs/operators';
 
 
 const httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 'enctype': 'multipart/form-data' })
 };
 
 @Injectable({
@@ -46,23 +46,37 @@ export class HeroService {
     }
 
     /** POST: add a new hero to the server */
-    addHero (hero: Hero): Observable<Hero> {
-        return this.http
-            .post<Hero>(this.heroesUrl, hero, httpOptions).pipe(
-            tap((hero: Hero) => this.log(`added task id=${hero.id}`)),
-            catchError(this.handleError<Hero>('addHero'))
-        );
-    }
+    // addHero (hero: Hero): Observable<Hero> {
+    //     return this.http
+    //         .post<Hero>(this.heroesUrl, hero, httpOptions).pipe(
+    //         tap((hero: Hero) => this.log(`added task id=${hero.id}`)),
+    //         catchError(this.handleError<Hero>('addHero'))
+    //     );
+    // }
 
-    postFile(imagefile: File): Observable<boolean> {
+    addHero(hero: Hero): Observable<boolean> {
         const formData: FormData = new FormData();
-        formData.append('imagefile', imagefile, imagefile.name);
+        formData.append('title', hero.title);
+        formData.append('description', hero.description);
+        formData.append('created_at', hero.created_at);
+        formData.append('status', hero.status);
+        formData.append('imagefile', hero.imagefile);
         return this.http
             .post(this.heroesUrl, formData, httpOptions)
             .pipe(
                 map(() => { return true; }),
             );
     }
+
+    // postFile(imagefile: File): Observable<boolean> {
+    //     const formData: FormData = new FormData();
+    //     formData.append('imagefile', imagefile, imagefile.name);
+    //     return this.http
+    //         .post(this.heroesUrl, formData, httpOptions)
+    //         .pipe(
+    //             map(() => { return true; }),
+    //         );
+    // }
 
     /** DELETE: delete the hero from the server */
     deleteHero (hero: Hero | number): Observable<Hero> {

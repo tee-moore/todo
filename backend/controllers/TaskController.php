@@ -31,7 +31,7 @@ class TaskController extends ActiveController
                     'Access-Control-Request-Headers'   => ['*'],
                     'Access-Control-Allow-Credentials' => true,
                     'Access-Control-Max-Age'           => 3600,
-                    //'Access-Control-Expose-Headers'    => ['X-Pagination-Current-Page'],
+                    'Access-Control-Expose-Headers'    => ['X-Pagination-Current-Page'],
                 ],
             ],
 
@@ -54,7 +54,7 @@ class TaskController extends ActiveController
 		$model = new Task();
 		$date = date('Y-m-d H-i-s');
 
-		$file = UploadedFile::getInstancesByName("imageFile");
+		$file = UploadedFile::getInstancesByName("imagefile");
 		$model->load(\Yii::$app->request->post(),'');
 
 		if($file){

@@ -37,10 +37,10 @@ class Task extends ActiveRecord
     {
         return [
 	        [['title', 'status'], 'string', 'max' => 255],
-	        [['description'], 'string'],
-            [['created_at', 'started_at'], 'integer'],
-//	        [['imageFile'], 'image', 'skipOnEmpty' => false, 'extensions' => 'png, jpg, jpeg'],
-	        [['imageFile'], 'string'],
+	        [['description', 'created_at'], 'string'],
+            [['started_at'], 'integer'],
+//	        [['imagefile'], 'image', 'skipOnEmpty' => false, 'extensions' => 'png, jpg, jpeg'],
+	        [['imagefile'], 'file'],
         ];
     }
 }

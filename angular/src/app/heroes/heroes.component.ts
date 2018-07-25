@@ -19,26 +19,26 @@ export class HeroesComponent implements OnInit {
         this.imagefile = files.item(0);
     }
 
-    uploadFileToActivity() {
-        this.heroService.postFile(this.imagefile).subscribe(data => {
-            // do something, if upload success
-        }, error => {
-            console.log(error);
-        });
-    }
+    // uploadFileToActivity() {
+    //     this.heroService.postFile(this.imagefile).subscribe(data => {
+    //         // do something, if upload success
+    //     }, error => {
+    //         console.log(error);
+    //     });
+    // }
 
-    add(title: string, description: string, status: string, created_at: number): void {
+    add(title: string, description: string, status: string, created_at: string): void {
 
         title = title.trim();
         description = description.trim();
-        created_at = Math.floor(Date.now()/1000);
+        created_at = String(Math.floor(Date.now()/1000));
+        let imagefile = this.imagefile;
 
         if (!title || !description) { return; }
-        this.heroService.addHero({ title, description, status, created_at } as Hero)
+        this.heroService.addHero({ title, description, status, created_at, imagefile } as Hero)
             .subscribe(hero => {
-                this.heroes.push(hero);
+                this.heroes.push(Hero);
             });
-        // this.uploadFileToActivity();
     }
 
     delete(hero: Hero): void {
