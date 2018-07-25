@@ -11,7 +11,7 @@ class m180717_132038_insert_tasks extends Migration
     {
         $this->insert('task',array(
             'title' =>'first task!',
-            'description' =>'we created first task',
+            'description' =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo distinctio fugiat quaerat vel ea unde impedit praesentium animi, tempora vitae similique culpa aut debitis assumenda quibusdam sed ad explicabo pariatur non, quam consequatur reprehenderit dignissimos aliquam iusto cum. Perferendis, voluptates.',
             'created_at' =>'1531824176',
             'started_at'=>'',
             'status'=>'new',
@@ -19,8 +19,8 @@ class m180717_132038_insert_tasks extends Migration
         ));
 
         $this->insert('task',array(
-            'title' =>'take a run in the morning',
-            'description' =>'sport is good for health',
+            'title' =>'second task!',
+            'description' =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo distinctio fugiat quaerat vel ea unde impedit praesentium animi, tempora vitae similique culpa aut debitis assumenda quibusdam sed ad explicabo pariatur non, quam consequatur reprehenderit dignissimos aliquam iusto cum. Perferendis, voluptates.',
             'created_at' =>'1531825251',
             'started_at'=>'1531826765',
             'status'=>'done',
@@ -29,7 +29,7 @@ class m180717_132038_insert_tasks extends Migration
 
         $this->insert('task',array(
             'title' =>'have breakfast',
-            'description' =>'I like eating',
+            'description' =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo distinctio fugiat quaerat vel ea unde impedit praesentium animi, tempora vitae similique culpa aut debitis assumenda quibusdam sed ad explicabo pariatur non, quam consequatur reprehenderit dignissimos aliquam iusto cum. Perferendis, voluptates.',
             'created_at' =>'1531833570',
             'started_at'=>'1531833570',
             'status'=>'in progress',
