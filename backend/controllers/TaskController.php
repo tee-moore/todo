@@ -2,9 +2,9 @@
 
 namespace backend\controllers;
 
-use yii\rest\ActiveController;
-use yii\web\UploadedFile;
-use backend\models\Task;
+use \yii\rest\ActiveController;
+use \yii\web\UploadedFile;
+use \backend\models\Task;
 
 /**
  * This is the controller class.
@@ -13,7 +13,7 @@ use backend\models\Task;
  */
 class TaskController extends ActiveController
 {
-    public $modelClass = 'backend\models\task';
+    public $modelClass = '\backend\models\Task';
 
     /**
      * @inheritdoc
