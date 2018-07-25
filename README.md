@@ -38,16 +38,20 @@
 <h6>Angular</h6>
 <p>open folder 'angular' and:</p>
 
+
 ```
-1. $ npm install
+1. Install angular: $ npm install -g @angular/cli
+```
+```
+2. $ npm install
 ```
 
 ```
-2. add virtul domen for api backend to src\app\config.json (default is http:\\todo.loc)
+3. add virtul domen for api backend to src\app\config.json (default is http:\\todo.loc)
 ```
 
 ```
-3. $ ng serve --open
+4. $ ng serve --open
 ```
 
 
