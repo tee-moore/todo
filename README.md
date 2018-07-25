@@ -40,7 +40,7 @@
 
 
 ```
-1. Install angular: $ npm install -g @angular/cli
+1. Install angular globally if needed: $ npm install -g @angular/cli
 ```
 ```
 2. $ npm install
