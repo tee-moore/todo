@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import * as data from '../config.json';
 
 @Component({
     selector: 'app-heroes',
@@ -12,6 +13,7 @@ export class HeroesComponent implements OnInit {
     selectedHero: Hero;
     heroes: Hero[];
     imagefile: File = null;
+    url = data.url;
 
     constructor(private heroService: HeroService) { }
 

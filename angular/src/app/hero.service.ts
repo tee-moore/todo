@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map, catchError, tap } from 'rxjs/operators';
-
+import * as data from './config.json';
 
 const httpOptions = {
     headers: new HttpHeaders({ 'enctype': 'multipart/form-data' })
@@ -17,7 +17,7 @@ const httpOptions = {
 export class HeroService {
 
     // URL to web api
-    private heroesUrl = 'http://todo.loc/backend/web/tasks';
+    private heroesUrl = data.url + '/backend/web/tasks';
 
     constructor(
         private http: HttpClient,
@@ -67,20 +67,6 @@ export class HeroService {
                 catchError(this.handleError<Hero>('addHero'))
             );
     }
-
-    // addHero(hero: Hero): Observable<boolean> {
-    //     const formData: FormData = new FormData();
-    //     formData.append('title', hero.title);
-    //     formData.append('description', hero.description);
-    //     formData.append('created_at', hero.created_at);
-    //     formData.append('status', hero.status);
-    //     formData.append('imagefile', hero.imagefile);
-    //     return this.http
-    //         .post(this.heroesUrl, formData, httpOptions)
-    //         .pipe(
-    //             map(() => { return true; }),
-    //         );
-    // }
 
     /** DELETE: delete the hero from the server */
     deleteHero (hero: Hero | number): Observable<Hero> {

@@ -17,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     imports: [
         BrowserModule,
         FormsModule,
-        HttpClientModule
+        HttpClientModule,
     ],
     providers: [
         // no need to place any providers due to the `providedIn` flag...

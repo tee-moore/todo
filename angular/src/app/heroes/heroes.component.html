@@ -28,8 +28,6 @@
     </div>
 </div>
 
-
-
 <ul class="collection">
     <li *ngFor="let hero of heroes"
     [class.selected]="hero === selectedHero"
@@ -49,7 +47,7 @@
     <div class="meta">
         <p class="block createdat">Created at: {{hero.created_at * 1000 | date:'dd.MM.yyyy'}}</p>
         <p *ngIf="hero.started_at != null" class="block startedat">Started at: {{hero.started_at * 1000 | date:'dd.MM.yyyy'}}</p>
-        <p *ngIf="hero.imagefilepath != null" class="block img"><a target="_blank" href="http://todo.loc/backend/web/{{hero.imagefilepath}}"><img src="http://todo.loc/backend/web/{{hero.imagefilepath}}" alt="" width="50"></a></p>
+        <p *ngIf="hero.imagefilepath != null" class="block img"><a target="_blank" href="{{url}}/backend/web/{{hero.imagefilepath}}"><img src="{{url}}/backend/web/{{hero.imagefilepath}}" alt="" width="50"></a></p>
     </div>
 
     <a class="button-delete waves-effect waves-light btn-small red"

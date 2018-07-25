@@ -15,7 +15,8 @@ class m180717_132038_insert_tasks extends Migration
             'created_at' =>'1531824176',
             'started_at'=>'',
             'status'=>'new',
-            'img'=>'',
+            'imagefilepath'=>'',
+            'imagefile' => ''
         ));
 
         $this->insert('task',array(
@@ -24,7 +25,8 @@ class m180717_132038_insert_tasks extends Migration
             'created_at' =>'1531825251',
             'started_at'=>'1531826765',
             'status'=>'done',
-            'img'=>'',
+            'imagefilepath'=>'',
+            'imagefile' => ''
         ));
 
         $this->insert('task',array(
@@ -33,7 +35,8 @@ class m180717_132038_insert_tasks extends Migration
             'created_at' =>'1531833570',
             'started_at'=>'1531833570',
             'status'=>'in progress',
-            'img'=>'',
+            'imagefilepath'=>'uploads/1497415722-4164-nasa-opublikovalo-fotografiyu-chernogo-morya - 2018-07-24 22-12-28.jpg',
+            'imagefile' => ''
         ));
     }
 

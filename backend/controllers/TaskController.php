@@ -59,7 +59,7 @@ class TaskController extends ActiveController
 
 		if($file){
 			$file = $file[0];
-			$path = "./uploads/".$file->baseName .' - '. $date .'.'. $file->extension;
+			$path = "uploads/".$file->baseName .' - '. $date .'.'. $file->extension;
 			$file->saveAs($path, true);
 			$model->imagefilepath = $path;
 		}
