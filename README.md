@@ -3,18 +3,19 @@
 <h6>YII2</h6>
 <ul>
 <li>1.create your virtul domen (default is http:\\todo.loc)</li>
-<li>2.git clone https://github.com/tee-moore/todo.git</li>
-<li>3.composer update</li>
-<li>4.php init ->  Development</li>
-<li>5.common\config\main-local.php - set database name</li>
-<li>6.php yii migrate</li>
+<li>2.$ git clone https://github.com/tee-moore/todo.git</li>
+<li>3.$ composer update</li>
+<li>4.$ php init ->  Development</li>
+<li>5.create database</li>
+<li>6.set database name: common\config\main-local.php</li>
+<li>7.$ php yii migrate</li>
 </ul>
 
 <h6>Angular</h6>
 <ul>
-<li>1.npm install</li>
+<li>1.$ npm install</li>
 <li>2.add virtul domen for api backend to src\app\config.json (default is http:\\todo.loc)</li>
-<li>3.ng serve --open</li>
+<li>3.$ ng serve --open</li>
 </ul>
 
 
