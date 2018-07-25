@@ -41,7 +41,7 @@ return [
             'showScriptName' => false,
             'enableStrictParsing' => true,
             'rules' => [
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'task', 'extraPatterns' => ['POST upload' => 'upload']],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'task'],
             ],
         ],
         'errorHandler' => [
