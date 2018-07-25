@@ -47,7 +47,7 @@
 ```
 
 ```
-3. add virtul domen for api backend to src\app\config.json (default is http:\\todo.loc)
+3. add virtul domen for api backend to src\app\config.ts (default is http:\\todo.loc)
 ```
 
 ```

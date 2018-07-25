@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map, catchError, tap } from 'rxjs/operators';
-import * as data from './config.json';
+import { url } from './config'
 
 const httpOptions = {
     headers: new HttpHeaders({ 'enctype': 'multipart/form-data' })
@@ -17,11 +17,12 @@ const httpOptions = {
 export class HeroService {
 
     // URL to web api
-    private heroesUrl = data.url + '/backend/web/tasks';
+    private heroesUrl = url + '/backend/web/tasks';
 
     constructor(
         private http: HttpClient,
-        private messageService: MessageService) { }
+        private messageService: MessageService) {
+    }
 
     /** Log a HeroService message with the MessageService */
     private log(message: string) {
