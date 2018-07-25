@@ -19,7 +19,7 @@ class m180717_130639_add_task_table extends Migration
             'id' => $this->primaryKey(),
             'title' => $this->string()->notNull(),
             'description' => $this->string()->notNull(),
-            'created_at' => $this->integer()->notNull(),
+            'created_at' => $this->string()->notNull(),
             'started_at' => $this->integer(),
             'status' => $this->string()->notNull(),
             'imagefilepath' => $this->string(),
