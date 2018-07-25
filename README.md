@@ -1,12 +1,5 @@
 <h2>Install:<h2>
 
-<h6>Angular</h6>
-<ul>
-<li>1.npm install</li>
-<li>2.add virtul domen for api backend to src\app\config.json (default is http:\\todo.loc)</li>
-<li>3.ng serve --open</li>
-</ul>
-
 <h6>YII2</h6>
 <ul>
 <li>1.create your virtul domen (default is http:\\todo.loc)</li>
@@ -15,6 +8,13 @@
 <li>4.php init ->  Development</li>
 <li>5.common\config\main-local.php - set database name</li>
 <li>6.php yii migrate</li>
+</ul>
+
+<h6>Angular</h6>
+<ul>
+<li>1.npm install</li>
+<li>2.add virtul domen for api backend to src\app\config.json (default is http:\\todo.loc)</li>
+<li>3.ng serve --open</li>
 </ul>
 
 
