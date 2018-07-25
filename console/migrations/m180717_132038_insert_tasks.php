@@ -13,10 +13,10 @@ class m180717_132038_insert_tasks extends Migration
             'title' =>'first task!',
             'description' =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo distinctio fugiat quaerat vel ea unde impedit praesentium animi, tempora vitae similique culpa aut debitis assumenda quibusdam sed ad explicabo pariatur non, quam consequatur reprehenderit dignissimos aliquam iusto cum. Perferendis, voluptates.',
             'created_at' =>'1531824176',
-            'started_at'=>'',
+//            'started_at'=>'',
             'status'=>'new',
-            'imagefilepath'=>'',
-            'imagefile' => ''
+//            'imagefilepath'=>'',
+//            'imagefile' => ''
         ));
 
         $this->insert('task',array(
@@ -25,8 +25,8 @@ class m180717_132038_insert_tasks extends Migration
             'created_at' =>'1531825251',
             'started_at'=>'1531826765',
             'status'=>'done',
-            'imagefilepath'=>'',
-            'imagefile' => ''
+//            'imagefilepath'=>'',
+//            'imagefile' => ''
         ));
 
         $this->insert('task',array(
@@ -36,7 +36,7 @@ class m180717_132038_insert_tasks extends Migration
             'started_at'=>'1531833570',
             'status'=>'in progress',
             'imagefilepath'=>'uploads/1497415722-4164-nasa-opublikovalo-fotografiyu-chernogo-morya - 2018-07-24 22-12-28.jpg',
-            'imagefile' => ''
+//            'imagefile' => ''
         ));
     }
 

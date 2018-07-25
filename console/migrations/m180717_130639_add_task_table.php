@@ -20,10 +20,10 @@ class m180717_130639_add_task_table extends Migration
             'title' => $this->string()->notNull(),
             'description' => $this->string()->notNull(),
             'created_at' => $this->string()->notNull(),
-            'started_at' => $this->integer(),
+            'started_at' => $this->integer()->null(),
             'status' => $this->string()->notNull(),
-            'imagefilepath' => $this->string(),
-            'imagefile' => $this->string(),
+            'imagefilepath' => $this->string()->null(),
+            'imagefile' => $this->string()->null(),
 
         ], $tableOptions);
     }
