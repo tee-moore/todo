@@ -35,9 +35,10 @@ export class HeroesComponent implements OnInit {
         let imagefile = this.imagefile;
 
         if (!title || !description) { return; }
+
         this.heroService.addHero({ title, description, status, created_at, imagefile } as Hero)
             .subscribe(hero => {
-                this.heroes.push(Hero);
+                this.heroes.push( hero );
             });
     }
 

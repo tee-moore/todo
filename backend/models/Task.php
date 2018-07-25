@@ -15,7 +15,7 @@ use \yii\web\UploadedFile;
  * @property int $created_at
  * @property int $started_at
  * @property string $status
- * @property string $imageFile
+ * @property string imagefilepath
  */
 class Task extends ActiveRecord
 {
@@ -39,8 +39,8 @@ class Task extends ActiveRecord
 	        [['title', 'status'], 'string', 'max' => 255],
 	        [['description', 'created_at'], 'string'],
             [['started_at'], 'integer'],
-//	        [['imagefile'], 'image', 'skipOnEmpty' => false, 'extensions' => 'png, jpg, jpeg'],
 	        [['imagefile'], 'file'],
+	        [['imagefilepath'], 'safe'],
         ];
     }
 }

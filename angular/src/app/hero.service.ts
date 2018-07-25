@@ -54,23 +54,27 @@ export class HeroService {
     //     );
     // }
 
-    addHero(hero: Hero): Observable<boolean> {
+    addHero(hero: Hero): Observable<Hero> {
         const formData: FormData = new FormData();
         formData.append('title', hero.title);
         formData.append('description', hero.description);
         formData.append('created_at', hero.created_at);
         formData.append('status', hero.status);
         formData.append('imagefile', hero.imagefile);
-        return this.http
-            .post(this.heroesUrl, formData, httpOptions)
-            .pipe(
-                map(() => { return true; }),
+            return this.http
+                .post<Hero>(this.heroesUrl, formData, httpOptions).pipe(
+                tap((hero: Hero) => this.log(`added task id=${hero.id}`)),
+                catchError(this.handleError<Hero>('addHero'))
             );
     }
 
-    // postFile(imagefile: File): Observable<boolean> {
+    // addHero(hero: Hero): Observable<boolean> {
     //     const formData: FormData = new FormData();
-    //     formData.append('imagefile', imagefile, imagefile.name);
+    //     formData.append('title', hero.title);
+    //     formData.append('description', hero.description);
+    //     formData.append('created_at', hero.created_at);
+    //     formData.append('status', hero.status);
+    //     formData.append('imagefile', hero.imagefile);
     //     return this.http
     //         .post(this.heroesUrl, formData, httpOptions)
     //         .pipe(

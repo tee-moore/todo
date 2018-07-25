@@ -18,7 +18,9 @@ export class HeroDetailComponent implements OnInit {
 
     save(): void {
 
-        this.hero.started_at = Math.floor(Date.now()/1000);
+        if(this.hero.status != 'new'){
+            this.hero.started_at = Math.floor(Date.now()/1000);
+        }
 
         this.heroService.updateHero(this.hero)
             .subscribe(() => this.hero);

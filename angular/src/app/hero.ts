@@ -5,5 +5,6 @@ export class Hero {
     created_at: string;
     started_at: number;
     status: string;
+    imagefilepath: string;
     imagefile: File;
 }
