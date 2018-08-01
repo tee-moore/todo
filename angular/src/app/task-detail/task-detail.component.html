@@ -1,19 +1,19 @@
-<div *ngIf="hero" class="edit">
+<div *ngIf="task" class="edit">
 
     <h5>Edit task:</h5>
 
     <div class="input-field">
-        <input [(ngModel)]="hero.title" placeholder="Title" id="taskTitle" name="taskTitle" type="text"/>
+        <input [(ngModel)]="task.title" placeholder="Title" id="taskTitle" name="taskTitle" type="text"/>
         <label for="taskTitle" class="active">Title</label>
     </div>
 
     <div class="input-field">
-        <input [(ngModel)]="hero.description" placeholder="Description" id="taskDesc" name="taskDesc" type="text"/>
+        <input [(ngModel)]="task.description" placeholder="Description" id="taskDesc" name="taskDesc" type="text"/>
         <label for="taskTitle" class="active">Description</label>
     </div>
 
     <div class="input-field">
-        <select [(ngModel)]="hero.status" class="browser-default">
+        <select [(ngModel)]="task.status" class="browser-default">
             <option value="in progress">In progress</option>
             <option value="done">Done</option>
         </select>
