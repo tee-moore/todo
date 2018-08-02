@@ -1,1 +1,1 @@
-export const url = "http://todo.loc"
+export const myUrl = "http://todo.loc"

@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use Yii;
 use \yii\rest\ActiveController;
 use \yii\web\UploadedFile;
 use \backend\models\Task;
@@ -51,20 +52,20 @@ class TaskController extends ActiveController
 	public function actionCreate()
 	{
 
-		$model = new Task();
-		$date = date('Y-m-d H-i-s');
+	    $model = new Task();
 
-		$file = UploadedFile::getInstancesByName("imagefile");
-		$model->load(\Yii::$app->request->post(),'');
+        if ($model->load(Yii::$app->request->post(), '') ){
 
-		if($file){
-			$file = $file[0];
-			$path = "uploads/".$file->baseName .' - '. $date .'.'. $file->extension;
-			$file->saveAs($path, true);
-			$model->imagefilepath = $path;
-		}
+            $file = UploadedFile::getInstancesByName("imagefile");
 
-		$model->save();
-		return $model;
+            if ($file){
+                $model->imagefile = $file[0];
+                $model->upload();
+            }
+
+            $model->save();
+            return $model;
+
+        }
 	}
 }

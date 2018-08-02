@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../task';
 import { TaskService } from '../task.service';
-import { url } from '../config'
+import { myUrl } from '../config'
 
 @Component({
     selector: 'app-tasks',
@@ -13,7 +13,7 @@ export class TasksComponent implements OnInit {
     selectedTask: Task;
     tasks: Task[];
     imagefile: File = null;
-    private url = url;
+    private url = myUrl;
 
 
     constructor(private taskService: TaskService) { }
@@ -28,12 +28,13 @@ export class TasksComponent implements OnInit {
         description = description.trim();
         created_at = String(Math.floor(Date.now()/1000));
         let imagefile = this.imagefile;
+        this.imagefile = null;
 
         if (!title || !description) { return; }
 
         this.taskService.addTask({ title, description, status, created_at, imagefile } as Task)
             .subscribe(task => {
-                this.tasks.push( task );
+                if(task) this.tasks.push( task );
             });
     }
 

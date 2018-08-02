@@ -17,12 +17,12 @@
 
     <div class="input-field">
         <label class="active" for="file">Choose File</label>
-        <input #taskImage type="file" id="file" (change)="handleFileInput($event.target.files)">
+        <input #taskImage type="file" id="file" name="imagefile" (change)="handleFileInput($event.target.files)">
     </div>
 
     <div class="input-field">
         <!-- (click) passes input value to add() and then clears the input -->
-        <a class="waves-effect waves-light btn" (click)="add(taskTitle.value, taskDesc.value, taskStatus.value); taskTitle.value=''; taskDesc.value=''; taskImage.value='';">
+        <a class="waves-effect waves-light btn" (click)="add(taskTitle.value, taskDesc.value, taskStatus.value); taskTitle.value=''; taskDesc.value=''; taskImage.value = null;">
             Add task
         </a>
     </div>

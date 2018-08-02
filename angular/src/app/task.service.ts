@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map, catchError, tap } from 'rxjs/operators';
-import { url } from './config'
+import { myUrl } from './config';
 
 const httpOptions = {
     headers: new HttpHeaders({ 'enctype': 'multipart/form-data' })
@@ -17,7 +17,7 @@ const httpOptions = {
 export class TaskService {
 
     // URL to web api
-    private tasksUrl = url + '/backend/web/tasks';
+    private tasksUrl = myUrl + '/backend/web/tasks';
 
     constructor(
         private http: HttpClient,
@@ -56,8 +56,9 @@ export class TaskService {
         formData.append('imagefile', task.imagefile);
             return this.http
                 .post<Task>(this.tasksUrl, formData, httpOptions).pipe(
-                tap((task: Task) => this.log(`added task id=${task.id}`)),
-                catchError(this.handleError<Task>('addTask'))
+                    tap((task: Task) => this.log(`added task id=${task.id}`),
+                        this.handleError<any>('addTask')
+                )
             );
     }
 
@@ -93,10 +94,13 @@ export class TaskService {
             console.error(error); // log to console instead
 
             // TODO: better job of transforming error for user consumption
-            this.log(`${operation} failed: ${error.message}`);
+            error.error.forEach(e => {
+                this.log(`${operation} failed: ${e.message}`);
+            })
+
 
             // Let the app keep running by returning an empty result.
             return of(result as T);
         };
-    }
+    };
 }
