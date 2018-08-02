@@ -27,7 +27,7 @@
 ```
 
 ```
-6. set database name: common\config\main-local.php
+6. set database name, username, password: common\config\main-local.php
 ```
 
 ```
