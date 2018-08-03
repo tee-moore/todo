@@ -1,9 +1,26 @@
 # global codeception file to run tests from all apps
-include:
-    - common
-    - frontend
-    - backend
-paths:
-    log: console/runtime/logs
+#include:
+#    - common
+#    - frontend
+#    - backend
+#paths:
+#    log: console/runtime/logs
+#settings:
+#    colors: true
+
+
+namespace: backend\tests
+actor: Tester
+path:
+    tests: tests
+    log: tests/_output
+    data: tests/_data
+    helpers: tests/_support
 settings:
+    bootstrap: _bootstrap.php
     colors: true
+    memort_limit: 1024M
+modules:
+    config:
+        Yii2:
+            configFile: "config/test-local.php"

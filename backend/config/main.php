@@ -44,9 +44,9 @@ return [
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'task'],
             ],
         ],
-        'errorHandler' => [
-            'errorAction' => 'site/error',
-        ],
+//        'errorHandler' => [
+//            'errorAction' => 'site/error',
+//        ],
     ],
     'params' => $params,
 ];

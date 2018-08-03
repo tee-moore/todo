@@ -1,0 +1,10 @@
+actor: ApiTester
+modules:
+    enabled:
+        - REST:
+            depends: PhpBrowser
+            url: 'http://127.0.0.1/backend/web'
+            part: Json
+        - Yii2:
+            part: [orm, fixtures]
+            entryScript: index-test.php

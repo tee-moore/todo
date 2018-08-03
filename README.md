@@ -54,6 +54,28 @@
 4. $ ng serve --open
 ```
 
+<h6>Testing</h6>
+
+```
+1. create database for testing
+```
+```
+2. set database name, username, password: common\config\test-local.php
+```
+
+```
+3. $ ./yii_test migrate
+```
+```
+4. $ vendor/bin/codecept build
+```
+```
+5. run server: $ php -S 127.0.0.1:8080 -t backend/web/
+```
+```
+6. run tests: $ vendor/bin/codecept run -- -c backend
+```
+
 
 
 <p align="center">

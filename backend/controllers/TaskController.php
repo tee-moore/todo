@@ -43,7 +43,7 @@ class TaskController extends ActiveController
 	{
 		$actions = parent::actions();
 
-		// disable the "delete" and "create" actions
+		// disable the "create" actions
 		unset($actions['create']);
 
 		return $actions;
