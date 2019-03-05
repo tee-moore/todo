@@ -1,3 +1,5 @@
+Test Project "Todo list". Backend: YII2, Frontend: Angular6.
+
 <h2>Install:<h2>
 
 <h6>YII2</h6>
